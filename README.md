@@ -156,7 +156,7 @@ sudo ./start.sh my-net-2 frontend3 frontend
 2828fb943b05aa37cbfd0bb65709775fb0b562f2e3ecd72ac6c41688e5276974
 ```
 
-***Caveat: *** sometimes for some reason using network name does not work when starting the container and the container immediatly stops. Should it happen to you, then better use the NETWORK ID in place of the network name. To get the **NETWORK ID, sudo docker network ls.
+Caveat:  sometimes for some reason using network name does not work when starting the container and the container immediatly stops. Should it happen to you, then better use the NETWORK ID in place of the network name. To get the **NETWORK ID, sudo docker network ls.
 
 Attach to the container in command line and check that backend can be reached:
 
