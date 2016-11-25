@@ -48,7 +48,8 @@ COPY web.xml .
 RUN  cd /opt/alfresco/tomcat/webapps/ && mkdir tmp && cd tmp && jar -xvf ../alfresco.war && rm  ./WEB-INF/web.xml && \
 	mv /web.xml ./WEB-INF/ && jar -cvf alfresco.war * && rm ../alfresco.war && mv alfresco.war .. && cd .. && rm -rf tmp
 
-
+EXPOSE 8443
+EXPOSE 8080
 
 ENTRYPOINT ./entry.sh
 

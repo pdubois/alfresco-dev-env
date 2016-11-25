@@ -93,7 +93,7 @@ sudo docker network inspect my-net-2
 Starting the ***backend***, running containeri will be called ***backend3***:
 
 ```
-sudo docker run --network=my-net-2 -e INITIAL_PASS=admin -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -d -i -t --name backend3 backend2****
+sudo docker run -P --network=my-net-2 -e INITIAL_PASS=admin -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -d -i -t --name backend3 backend2****
 ```
 
 Alternatively, you can use the ***start.sh*** command in the backend folder of this project to start the backend:
@@ -141,8 +141,9 @@ sudo docker network inspect my-net-2
 ```
 You can observe that "backend3" is running attached to "my-net-2" network.
 
-Note: The ***backend*** is started having ***CORS*** (see: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing ) enabled. For the setup of ***CORS*** in alfresco, you can have a look at http://fcorti.com/2016/09/05/alfresco-development-framework-in-action/#alfresco_setup
-
+Notes:
+The ***backend*** is started having ***CORS*** (see: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing ) enabled. For the setup of ***CORS*** in alfresco, you can have a look at http://fcorti.com/2016/09/05/alfresco-development-framework-in-action/#alfresco_setup
+The backend ***EXPOSE*** port ***4443*** and port ***8080*** to ephemeral ports on the host in the range 32768 to 61000. Please check https://docs.docker.com/engine/userguide/networking/default_network/binding/ for more information. To get the acual mapping of ports between container and host do ***"sudo docker ps"***
 
 #### Start the frontend
 
