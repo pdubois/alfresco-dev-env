@@ -44,7 +44,7 @@ RUN source ~/.nvm/nvm.sh; \
     npm install -g angular-cli;
     
 RUN cd ~ && wget --no-check-certificate https://download.jetbrains.com/webstorm/WebStorm-2016.2.2.tar.gz \
-    && tar xfz WebStorm-2016.2.2.tar.gz
+    && tar xfz WebStorm-2016.2.2.tar.gz && rm WebStorm-2016.2.2.tar.gz
     
 
 ENTRYPOINT /bin/bash
