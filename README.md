@@ -247,6 +247,8 @@ npm@2828fb943b05:~$ cd hello-world; tree .
 ```
 Lets test and start the *** "hello-world"*** application from webstorm IDE, please have a look at following video: https://youtu.be/r9d_wjBOZpM
 
+An alias ***"webstorm"*** allows you start the IDE directly.
+
 If you want to start the application outside of the IDE, stop ***npm***, quit the IDE and firefox. Change directory to "hello-world". Then do:
 
 ```
