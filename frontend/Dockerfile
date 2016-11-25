@@ -14,6 +14,10 @@ RUN apt-get -y install curl libc6 libcurl3 zlib1g
 RUN apt-get -y install iputils-ping && apt-get -y install -y net-tools
 RUN apt-get -y install nano
 RUN apt-get -y install firefox
+RUN apt-get -y --force-yes install apt-transport-https
+RUN echo  "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+RUN apt-get update 
+RUN apt-get -y --force-yes install google-chrome-stable
 
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh

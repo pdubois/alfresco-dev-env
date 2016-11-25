@@ -5,7 +5,7 @@ The aim of this project is to quickly be able to set up an ***Alfresco*** develo
 The backend development environment has ***java 8***,***eclipse mars***, ***maven*** and a version of ***Alfresco 5.2 EA*** amongst other tools installed in the image after build. For information, the ***backend*** image is based on https://github.com/pdubois/docker-alfresco/tree/v5.2.a that is already build here: https://hub.docker.com/r/pdubois/docker-alfresco/tags/
 
 The frontend will install in the image ***nodejs***, ***nvm*** (node version manager, see:  https://github.com/creationix/nvm), ***npm***, ***Angular 2***, ***Alfresco ng 2 component*** (see: https://github.com/Alfresco/alfresco-ng2-components), ***yo*** ( see: https://github.com/yeoman/yo). 
-***nvm*** facilitates ***nodejs*** versions switching management.
+***nvm*** facilitates ***nodejs*** versions switching management. Firefox and GoogleChrome. 
 
 ## How to build and run your environment?
 
@@ -254,6 +254,8 @@ npm start&
 firefox&
 ```
 In firefox address bar type http://localhost:4200/
+
+Note: If you wandt to use google-chrome, then start it using ***google-chrome --no-sandbox***
 
 Lets start a new frontend container now:
 
