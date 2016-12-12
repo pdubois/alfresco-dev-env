@@ -48,6 +48,10 @@ COPY web.xml .
 RUN  cd /opt/alfresco/tomcat/webapps/ && mkdir tmp && cd tmp && jar -xvf ../alfresco.war && rm  ./WEB-INF/web.xml && \
 	mv /web.xml ./WEB-INF/ && jar -cvf alfresco.war * && rm ../alfresco.war && mv alfresco.war .. && cd .. && rm -rf tmp
 
+# Install API Explorer
+RUN wget https://artifacts.alfresco.com/nexus/service/local/repositories/releases/content/org/alfresco/api-explorer/1.2/api-explorer-1.2.war && \
+    mv api-explorer-1.2.war /opt/alfresco/tomcat/webapps/api-explorer.war
+
 EXPOSE 8443
 EXPOSE 8080
 
