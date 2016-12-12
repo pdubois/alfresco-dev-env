@@ -52,6 +52,10 @@ RUN cd ~ && wget --no-check-certificate https://download.jetbrains.com/webstorm/
 
 # Define "webstorm" as alias on /home/npm/WebStorm-162.1628.41/bin/webstorm.sh
 RUN echo "alias webstorm='/home/npm/WebStorm-162.1628.41/bin/webstorm.sh'" >>~/.bashrc
+
+# Create a folder where some folder from the host will be mounted
+# i.e.: -v <path to host dir>:/home/npm/projects
+RUN mkdir ~/projects
    
 
 ENTRYPOINT /bin/bash
