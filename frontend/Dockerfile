@@ -47,11 +47,11 @@ RUN source ~/.nvm/nvm.sh; \
     npm install -g generator-ng2-alfresco-app; \
     npm install -g angular-cli;
     
-RUN cd ~ && wget --no-check-certificate https://download.jetbrains.com/webstorm/WebStorm-2016.2.2.tar.gz \
-    && tar xfz WebStorm-2016.2.2.tar.gz && rm WebStorm-2016.2.2.tar.gz
+RUN cd ~ && wget --no-check-certificate https://download.jetbrains.com/webstorm/WebStorm-2016.3.3.tar.gz \
+    && tar xfz WebStorm-2016.3.3.tar.gz && rm WebStorm-2016.3.3.tar.gz
 
 # Define "webstorm" as alias on /home/npm/WebStorm-162.1628.41/bin/webstorm.sh
-RUN echo "alias webstorm='/home/npm/WebStorm-162.1628.41/bin/webstorm.sh'" >>~/.bashrc
+RUN echo "alias webstorm='/home/npm/WebStorm-163.12024.17/bin/webstorm.sh'" >>~/.bashrc
 
 # Create a folder where some folder from the host will be mounted
 # i.e.: -v <path to host dir>:/home/npm/projects
