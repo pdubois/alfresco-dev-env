@@ -145,6 +145,39 @@ Notes:
 The ***backend*** is started having ***CORS*** (see: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing ) enabled. For the setup of ***CORS*** in alfresco, you can have a look at http://fcorti.com/2016/09/05/alfresco-development-framework-in-action/#alfresco_setup
 The backend ***EXPOSE*** port ***4443*** and port ***8080*** to ephemeral ports on the host in the range 32768 to 61000. Please check https://docs.docker.com/engine/userguide/networking/default_network/binding/ for more information. To get the acual mapping of ports between container and host do ***"sudo docker ps"***
 
+You may want to generate a project on the backend using new SDK 3.0. in place of using the installed default alfresco version. This is in case if you need to customize backend as well. To do so you should use the following command:
+
+```
+mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate -DarchetypeCatalog=https://artifacts.alfresco.com/nexus/content/groups/public/archetype-catalog.xml -Dfilter=org.alfresco.maven.archetype:
+```
+
+Backend has maven 3.3.9 installed and it seems to come by default with maven-archetype-plugin version 3.0 that was breaking the functionality. Forcing version 2.4. to made it work.
+
+
+You may need as well enabling ***CORS*** in your maven project, in that case you need to bring in the following module dependency in your project and edit your pom.xml as such:
+
+```
+                    <!--
+                        JARs and AMPs that should be overlayed/applied to the Platform/Repository WAR
+                        (i.e. alfresco.war)
+                    -->
+			
+			...
+			
+                        <!-- Bring in custom Modules -->
+                        <moduleDependency>
+                           <groupId>org.alfresco</groupId>
+                           <artifactId>enablecors</artifactId>
+                           <version>1.0</version>
+                           <type>jar</type>
+                        </moduleDependency>
+
+                       ...
+  
+                    </platformModules>
+```
+
+
 #### Start the frontend
 
 
