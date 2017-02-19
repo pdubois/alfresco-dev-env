@@ -1,8 +1,5 @@
 FROM pdubois/docker-alfresco:master
-<<<<<<< HEAD
-# FROM alfrescobase
-=======
->>>>>>> 618f7cb9ad23ef50ed5cd5dc361c1eb67d171028
+
 
 MAINTAINER Philippe Dubois <philippe.dubois@alfresco.com>
 
