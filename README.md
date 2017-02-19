@@ -2,7 +2,7 @@
 
 ## Description
 The aim of this project is to quickly be able to set up an ***Alfresco*** development environment. The environment is composed of minimum 2 containers called here ***backend*** and  ***frontend***. This environment can be improved, tailored to your needs, copied, shared without worrying of breaking anything on your host.
-The backend development environment has ***java 8***,***eclipse mars***, ***maven*** and a version of ***Alfresco 5.2 EA*** amongst other tools installed in the image after build. For information, the ***backend*** image is based on https://github.com/pdubois/docker-alfresco/tree/v5.2.a that is already build here: https://hub.docker.com/r/pdubois/docker-alfresco/tags/
+The backend development environment has ***java 8***,***eclipse mars***, ***maven*** and a version of ***Alfresco 5.2.d*** amongst other tools installed in the image after build. For information, the ***backend*** image is based on https://github.com/pdubois/docker-alfresco/tree/v5.2.a that is already build here: https://hub.docker.com/r/pdubois/docker-alfresco/tags/
 
 The frontend will install in the image ***nodejs***, ***nvm*** (node version manager, see:  https://github.com/creationix/nvm), ***npm***, ***Angular 2***, ***Alfresco ng 2 component*** (see: https://github.com/Alfresco/alfresco-ng2-components), ***yo*** ( see: https://github.com/yeoman/yo). 
 ***nvm*** facilitates ***nodejs*** versions switching management. Firefox and GoogleChrome. 
@@ -93,7 +93,7 @@ sudo docker network inspect my-net-2
 Starting the ***backend***, running containeri will be called ***backend3***:
 
 ```
-sudo docker run -P --network=my-net-2 -e INITIAL_PASS=admin -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -d -i -t --name backend3 backend2****
+sudo docker run -P --network=my-net-2 -e INITIAL_PASS=admin -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -d -i -t --name backend3 backend2
 ```
 
 Alternatively, you can use the ***start.sh*** command in the backend folder of this project to start the backend:
@@ -176,6 +176,8 @@ You may need as well enabling ***CORS*** in your maven project, in that case you
   
                     </platformModules>
 ```
+
+It was tested with ***SDK 3.0 beta-5*** using platform ***5.2.d*** 
 
 
 #### Start the frontend
