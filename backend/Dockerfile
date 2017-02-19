@@ -1,5 +1,8 @@
 FROM pdubois/docker-alfresco:master
+<<<<<<< HEAD
 # FROM alfrescobase
+=======
+>>>>>>> 618f7cb9ad23ef50ed5cd5dc361c1eb67d171028
 
 MAINTAINER Philippe Dubois <philippe.dubois@alfresco.com>
 
@@ -44,8 +47,8 @@ RUN mv enablecors-1.0.jar /opt/alfresco/modules/platform
 
 
 # Install API Explorer
-RUN wget https://artifacts.alfresco.com/nexus/service/local/repositories/releases/content/org/alfresco/api-explorer/1.2/api-explorer-1.2.war && \
-    mv api-explorer-1.2.war /opt/alfresco/tomcat/webapps/api-explorer.war
+RUN wget https://artifacts.alfresco.com/nexus/service/local/repositories/releases/content/org/alfresco/api-explorer/1.4/api-explorer-1.4.war && \
+    mv api-explorer-1.4.war /opt/alfresco/tomcat/webapps/api-explorer.war
 
 
 RUN ls -la /opt/alfresco/amps/
