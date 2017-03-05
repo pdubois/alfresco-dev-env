@@ -1,5 +1,4 @@
-FROM pdubois/docker-alfresco:master
-
+FROM pdubois/docker-alfresco:v5.2.e
 
 MAINTAINER Philippe Dubois <philippe.dubois@alfresco.com>
 
