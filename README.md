@@ -93,7 +93,7 @@ sudo docker network inspect my-net-2
 Starting the ***backend***, running containeri will be called ***backend3***:
 
 ```
-sudo docker run -P --network=my-net-2 -e INITIAL_PASS=admin -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro -d -i -t --name backend3 backend2
+sudo docker   run --expose 8443 --expose 8080 -P  -e INITIAL_PASS=admin  --device   /dev/dri --env="DISPLAY" --env QT_X11_NO_MITSHM=1  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -it backend2
 ```
 
 Alternatively, you can use the ***start.sh*** command in the backend folder of this project to start the backend:
